@@ -1,37 +1,27 @@
 #!/usr/bin/node
 
-/**
- * This script gets the contents of a webpage and stores it in a file, UTF-8 encoded.
- *
- * Usage:
- * $ node 3-request_store.js <URL> <file path>
- *
- * Example:
- * $ node 3-request_store.js https://google.com ./google.com.html
- */
+// Import required modules.
+const fs = require('fs'); // File system module.
+const request = require('request'); // HTTP request module.
 
-const request = require('request');
-const fs = require('fs');
-
+// Get URL and file path from command line arguments.
 const url = process.argv[2];
 const filePath = process.argv[3];
 
-if (!url || !filePath) {
-  console.error('Usage: node 3-request_store.js <URL> <file path>');
-  process.exit(1);
-}
-
-request.get(url, async (error, response, body) => {
+// Make a GET request to the specified URL.
+request(url, (error, response, body) => {
+  // Handle potential errors in the request.
   if (error) {
-    console.error(error);
-    process.exit(1);
+    console.error(error); // Print the error message.
+    return; // Exit the function.
   }
 
-  try {
-    await fs.promises.writeFile(filePath, body, { encoding: 'utf8' });
-    console.log();
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
-  }
+  // Write the response body to the specified file path in UTF-8 encoding.
+  fs.writeFile(filePath, body, 'utf8', (err) => {
+    // Handle potential errors in writing the file.
+    if (err) {
+      console.error(err); // Print the error message.
+      return; // Exit the function.
+    }
+  });
 });

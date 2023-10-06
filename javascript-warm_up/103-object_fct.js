@@ -11,7 +11,7 @@ console.log(myObject);
 // The object is logged to the console, printing its initial state
 
 myObject.incr = function () {
-    this.value++;
+    myObject.value++;
     // Method: incr, increments the 'value' property of the object by 1
 };
 

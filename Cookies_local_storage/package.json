@@ -1,0 +1,23 @@
+{
+  "name": "cookies_local_storage",
+  "version": "1.0.0",
+  "description": "## 0. Create basic cookie  Install your development environment:",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Amah Nnachi",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+
+  "scripts": {
+    "start": "webpack serve --config webpack.config.js"
+  }
+
+
+}

@@ -1,0 +1,25 @@
+<!--
+  This HTML code demonstrates selecting an element by its id and updating its content using JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Introduction</title>
+  </head>
+  <body>
+    <!-- Create a paragraph element with the id "myParagraph" -->
+    <p id="myParagraph">This is a paragraph.</p>
+
+    <script>
+      // Select the element by its id and store it in a variable
+      let paragraphElement = document.getElementById("myParagraph");
+
+      // Modify the content of the <p> element
+      paragraphElement.textContent =
+        "I successfully updated this paragraph with JavaScript.";
+    </script>
+  </body>
+</html>

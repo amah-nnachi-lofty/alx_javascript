@@ -1,0 +1,45 @@
+<!--
+    This HTML code demonstrates creating, appending, and toggling elements using JavaScript.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Creating and Toggling Elements</title>
+  </head>
+  <body>
+    <!-- Create a container div element with the id "container" -->
+    <div id="container"></div>
+    <script>
+      // Select the container element by its id and store it in a variable
+      const container = document.getElementById("container");
+
+      // Create a new <p> element and set its content
+      const paragraph = document.createElement("p");
+      paragraph.textContent = "New Paragraph";
+      // Append the new <p> element to the container
+      container.appendChild(paragraph);
+
+      // Create a button element and set its text content
+      const toggleButton = document.createElement("button");
+      toggleButton.textContent = "Toggle Paragraph";
+      container.appendChild(toggleButton);
+
+      // Track whether the paragraph is hidden
+      let isHidden = false;
+
+      // Add a click event listener to toggle the paragraph visibility
+      toggleButton.addEventListener("click", () => {
+        if (isHidden) {
+          paragraph.style.display = "block"; // Show the paragraph
+          isHidden = false;
+        } else {
+          paragraph.style.display = "none"; // Hide the paragraph
+          isHidden = true;
+        }
+        // Display success message when elements are created and toggled
+        console.log("HTML code executed successfully. Paragraph and button created, appended, and toggling elements works as expected.");
+      });
+    </script>
+  </body>
+</html>

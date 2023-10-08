@@ -1,0 +1,32 @@
+<!--
+  This HTML code demonstrates selecting an image element by its ID and modifying its source, alt text, and border style using JavaScript.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modifying Elements</title>
+    <style>
+      /* Define a CSS style for all img elements */
+      img {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Create an img element with the ID "myImage" and initial source, alt text, and border style -->
+    <img id="myImage" src="https://picsum.photos/200/300" alt="My Image" />
+
+    <script>
+      // Select the img element by its ID
+      const myImage = document.getElementById("myImage");
+
+      // Modify the src, alt, and border style of the img element
+      myImage.src = "https://picsum.photos/200/301";
+      myImage.alt = "New image";
+      myImage.style.border = "2px solid red";
+    </script>
+  </body>
+</html>
